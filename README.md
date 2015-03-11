@@ -1,4 +1,4 @@
-# docker_openmdao
+Dockerfile to build the container [piredtu/openmdao:0.10.3.2](http:/hub.docker.com/u/piredtu/openmdao)
 
 To build: 
 
