@@ -11,7 +11,7 @@ ENV OPENMDAODIR /openmdao/openmdao-0.10.3.2
 
 WORKDIR /openmdao
 ADD go-openmdao-0.10.3.2.py /openmdao/go-openmdao-0.10.3.2.py
-ADD requirements.txt /openmdao/requirements.txt
+
 RUN python2.7 /openmdao/go-openmdao-0.10.3.2.py
 RUN rm -rf /usr/local/lib/python2.7/dist-packages/ipython*
 RUN bash -c "source $OPENMDAODIR/bin/activate; pip install ipython; pip install tornado --upgrade"
