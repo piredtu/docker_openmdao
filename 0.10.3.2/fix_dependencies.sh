@@ -15,4 +15,4 @@ rm -rf $OPENMDAODIR/lib/python2.7/site-packages/IPython*
 rm -rf $OPENMDAODIR/lib/python2.7/site-packages/ipython*
 rm -rf $OPENMDAODIR/lib/python2.7/site-packages/tornado*
 
-bash -c "source $ACTIVATE; pip install -r $INSTALLDIR/requirements.txt"
+pip install -r $INSTALLDIR/requirements.txt
