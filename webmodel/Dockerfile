@@ -1,4 +1,4 @@
-FROM rethore/openmdao:0.10.3.2
+FROM piredtu/openmdao:standalone
 
 MAINTAINER Pierre-Elouan Rethore <pire@dtu.dk>
 
