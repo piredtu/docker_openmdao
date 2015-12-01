@@ -1,8 +1,20 @@
-FROM ipython/scipystack
+FROM jupyter/notebook
 
 MAINTAINER Pierre-Elouan Rethore <pire@dtu.dk>
 
-RUN apt-get update && apt-get install -y gfortran
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  make \
+  gcc \
+  git \
+  python \
+  python-dev \
+  python-pip \
+  gfortran \
+  curl \
+  wget \
+  python-numpy \
+  python-scipy
 
 ENV OMV 0.10.3.2
 
@@ -32,8 +44,8 @@ RUN chmod a+x /bin/omdao
 RUN python2.7 $INSTALLDIR/go-openmdao-$OMV.py
 
 # We need the latest version of tornado and ipython installed
-RUN chmod u+x $INSTALLDIR/fix_dependencies.sh
-RUN /bin/omdao $INSTALLDIR/fix_dependencies.sh
+# RUN chmod u+x $INSTALLDIR/fix_dependencies.sh
+# RUN /bin/omdao $INSTALLDIR/fix_dependencies.sh
 
 ADD notebook.sh $INSTALLDIR/notebook.sh
 RUN chmod a+x $INSTALLDIR/notebook.sh
